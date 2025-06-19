@@ -18,10 +18,10 @@ This Turborepo includes the following packages and apps:
 
 ### Apps and Packages
 
-- `api`: an [Express](https://expressjs.com/) server
-- `storefront`: a [Next.js](https://nextjs.org/) app
-- `admin`: a [Vite](https://vitejs.dev/) single page app
-- `blog`: a [Remix](https://remix.run/) blog
+- `express-template`: an [Express](https://expressjs.com/) server
+- `next-template`: a [Next.js](https://nextjs.org/) app
+- `vite-template`: a [Vite](https://vitejs.dev/) single page app
+- `remix-template`: a [Remix](https://remix.run/) blog
 - `@repo/eslint-config`: ESLint configurations used throughout the monorepo
 - `@repo/jest-presets`: Jest configurations
 - `@repo/logger`: isomorphic logger (a small wrapper around console.log)
