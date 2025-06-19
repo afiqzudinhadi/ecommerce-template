@@ -1,25 +1,26 @@
 {
-  "name": "kitchen-sink",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "dev": "turbo run dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "check-types": "turbo run check-types"
-  },
-  "devDependencies": {
-    "prettier": "^3.5.3",
-    "turbo": "^2.5.4"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@11.4.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+	"name": "ecommerce-template",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"clean": "turbo run clean",
+		"clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+		"dev": "turbo run dev",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"lint": "turbo run lint",
+		"test": "turbo run test",
+		"check-types": "turbo run check-types"
+	},
+	"devDependencies": {
+		"prettier": "^3.5.3",
+		"turbo": "^2.5.4"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"packageManager": "npm@11.4.2",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	]
 }
