@@ -1,11 +1,11 @@
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@repo/ui/components/button.mjs";
 import {
 	Card,
 	CardContent,
 	CardHeader,
 	CardTitle,
-} from "@repo/ui/components/card";
-import { Link } from "@repo/ui/link";
+} from "@repo/ui/components/card.mjs";
+import { Link } from "@repo/ui/link/index.mjs";
 
 export default function Index() {
 	return (
