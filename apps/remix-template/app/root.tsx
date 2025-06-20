@@ -6,7 +6,7 @@ import {
 	ScrollRestoration,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
-import "./styles.css";
+import "@repo/ui/styles/styles.css";
 import "@repo/ui/globals.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
