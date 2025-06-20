@@ -9,8 +9,8 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "bunchee",
-		"dev": "bunchee --watch",
+		"build": "npm run clean && tsup",
+		"dev": "npm run clean && tsup --watch",
 		"check-types": "tsc --noEmit",
 		"lint": "eslint src/",
 		"test": "jest",
@@ -28,10 +28,10 @@
 		"@repo/typescript-config": "*",
 		"@tailwindcss/postcss": "^4.1.10",
 		"@types/node": "^22.15.32",
-		"bunchee": "^6.4.0",
 		"eslint": "^9.29.0",
 		"jest": "^29.7.0",
 		"tailwindcss": "^4.1.10",
+		"tsup": "^8.5.0",
 		"typescript": "5.8.2"
 	},
 	"peerDependencies": {
@@ -41,68 +41,10 @@
 		"react-dom": ">=18"
 	},
 	"exports": {
-		"./counter-button": {
-			"import": {
-				"types": "./dist/es/counter-button.d.mts",
-				"default": "./dist/es/counter-button.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/counter-button.d.ts",
-				"default": "./dist/cjs/counter-button.js"
-			}
-		},
-		"./link": {
-			"import": {
-				"types": "./dist/es/link.d.mts",
-				"default": "./dist/es/link.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/link.d.ts",
-				"default": "./dist/cjs/link.js"
-			}
-		},
 		"./postcss.config": "./postcss.config.mjs",
-		"./src/styles/globals.css": "./src/styles/globals.css",
-		"./lib/utils": {
-			"import": {
-				"types": "./dist/es/lib/utils.d.mts",
-				"default": "./dist/es/lib/utils.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/lib/utils.d.ts",
-				"default": "./dist/cjs/lib/utils.js"
-			}
-		},
-		"./components/button": {
-			"import": {
-				"types": "./dist/es/components/button.d.mts",
-				"default": "./dist/es/components/button.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/components/button.d.ts",
-				"default": "./dist/cjs/components/button.js"
-			}
-		},
-		"./components/card": {
-			"import": {
-				"types": "./dist/es/components/card.d.mts",
-				"default": "./dist/es/components/card.mjs"
-			},
-			"require": {
-				"types": "./dist/cjs/components/card.d.ts",
-				"default": "./dist/cjs/components/card.js"
-			}
-		}
-	},
-	"typesVersions": {
-		"*": {
-			"button": [
-				"src/components/button.tsx"
-			],
-			"card": [
-				"src/components/card.tsx"
-			]
-		}
+		"./tailwind.config": "./tailwind.config.ts",
+		"./globals.css": "./dist/styles/globals.css",
+		"./*": "./dist/*"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.2.3",
