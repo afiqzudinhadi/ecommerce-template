@@ -43,7 +43,7 @@
 	"exports": {
 		"./postcss.config": "./postcss.config.mjs",
 		"./tailwind.config": "./tailwind.config.ts",
-		"./globals.css": "./dist/styles/globals.css",
+		"./global.css": "./dist/styles/global.css",
 		"./*": "./dist/*"
 	},
 	"dependencies": {

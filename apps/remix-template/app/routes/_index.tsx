@@ -1,5 +1,5 @@
-import { CounterButton } from "@repo/ui/counter-button/index.mjs";
-import { Link } from "@repo/ui/link/index.mjs";
+import { CounterButton } from "@repo/ui/counter-button";
+import { Link } from "@repo/ui/link";
 
 export default function Index() {
 	return (

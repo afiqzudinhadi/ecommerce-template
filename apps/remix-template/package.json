@@ -11,6 +11,7 @@
 		"lint": "eslint app/ --max-warnings 0"
 	},
 	"dependencies": {
+		"@radix-ui/react-slot": "^1.2.3",
 		"@remix-run/node": "^2.15.2",
 		"@remix-run/react": "^2.15.2",
 		"@remix-run/server-runtime": "^2.15.2",

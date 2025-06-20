@@ -6,7 +6,8 @@
 		"module": "ESNext",
 		"skipLibCheck": true,
 		"paths": {
-			"~/*": ["./app/*"]
+			"~/*": ["./app/*"],
+			"@repo/ui/*": ["../../packages/ui/src/*"]
 		},
 
 		// Vite takes care of building everything, not tsc.

@@ -1,10 +1,10 @@
-import { Button } from "@repo/ui/components/button.js";
+import { Button } from "@repo/ui/components/button";
 import {
 	Card,
 	CardContent,
 	CardHeader,
 	CardTitle,
-} from "@repo/ui/components/card.js";
+} from "@repo/ui/components/card";
 
 export default function HomePage() {
 	return (
