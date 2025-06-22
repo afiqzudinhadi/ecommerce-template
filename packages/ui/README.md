@@ -11,6 +11,7 @@ This repo includes the following packages and apps:
 - `tailwindcss`: Tailwind CSS configuration for styling
 - `postcss`: PostCSS configuration for processing CSS
 - `shadcn/ui`: shadcn/ui components for UI
+- `tsup`: TypeScript bundler for building the UI components
 
 ### Building and Running
 
