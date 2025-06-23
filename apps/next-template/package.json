@@ -12,6 +12,7 @@
 		"clean": "rm -rf .next"
 	},
 	"dependencies": {
+		"@clerk/nextjs": "^6.22.0",
 		"@repo/logger": "*",
 		"@repo/ui": "*",
 		"next": "^15.3.0",
