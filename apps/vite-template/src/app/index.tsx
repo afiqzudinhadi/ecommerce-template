@@ -28,7 +28,7 @@ function App() {
 						</SignInButton>
 					</SignedOut>
 					<SignedIn>
-						<UserButton afterSignOutUrl="/" />
+						<UserButton />
 					</SignedIn>
 				</div>
 			</header>
@@ -39,6 +39,7 @@ function App() {
 					<span>Kitchen Sink</span>
 				</h1>
 				<CounterButton />
+
 				<Card className="my-6">
 					<CardHeader>
 						<CardTitle>shadcn/ui Card Example</CardTitle>
@@ -47,6 +48,17 @@ function App() {
 						<Button>shadcn/ui Button</Button>
 					</CardContent>
 				</Card>
+
+				<Card className="my-6">
+					<CardHeader>
+						<CardTitle>Clerk Authentication Example</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<SignedOut>You are signed out!</SignedOut>
+						<SignedIn>You are signed in!</SignedIn>
+					</CardContent>
+				</Card>
+
 				<p className="description">
 					Built With{" "}
 					<Link href="https://turborepo.com" newTab>

@@ -1,40 +1,24 @@
 import { SignInButton, UserButton, SignedIn, SignedOut } from "@clerk/remix";
-import {
-	Card,
-	CardContent,
-	CardHeader,
-	CardTitle,
-} from "@repo/ui/components/card";
 import { Button } from "@repo/ui/components/button";
+import { Outlet } from "@remix-run/react";
 
 export default function Index() {
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-muted">
-			<Card className="w-full max-w-md shadow-lg">
-				<CardHeader>
-					<CardTitle className="text-center">Welcome</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<SignedIn>
-						<div className="flex flex-col items-center gap-4">
-							<p className="text-green-700 font-medium">
-								You are signed in!
-							</p>
-							<UserButton />
-						</div>
-					</SignedIn>
+		<div>
+			<header className="flex items-center justify-end py-4 px-6 bg-white shadow-sm mb-6">
+				<div>
 					<SignedOut>
-						<div className="flex flex-col items-center gap-4">
-							<p className="text-red-700 font-medium">
-								You are signed out
-							</p>
-							<SignInButton>
-								<Button variant="default">Sign In</Button>
-							</SignInButton>
-						</div>
+						<SignInButton mode="modal">
+							<Button variant="outline">Sign In</Button>
+						</SignInButton>
 					</SignedOut>
-				</CardContent>
-			</Card>
+					<SignedIn>
+						<UserButton />
+					</SignedIn>
+				</div>
+			</header>
+
+			<Outlet />
 		</div>
 	);
 }
