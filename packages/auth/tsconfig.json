@@ -1,0 +1,14 @@
+{
+	"extends": "@repo/typescript-config/base.json",
+	"compilerOptions": {
+		"lib": ["dom", "ES2015"],
+		"sourceMap": true,
+		"types": ["jest", "node"],
+		"baseUrl": ".",
+		"paths": {
+			"@repo/auth/index.ts": ["./index.ts"]
+		}
+	},
+	"include": [".", "src"],
+	"exclude": ["dist", "build", "node_modules"]
+}
