@@ -21,6 +21,7 @@ This Turborepo includes the following packages and apps:
 - `@repo/ui`: shared UI components for frontend use.
     - A dummy React UI library (which contains `<CounterButton>` and `<Link>` components)
     - And shadcn/ui components (which contains `<Button>` and `<Card>` components)
+- `@repo/auth`: shared auth helpers using [Clerk](https://clerk.com/) as auth provider
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
