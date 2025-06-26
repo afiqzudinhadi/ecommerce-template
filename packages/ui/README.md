@@ -31,6 +31,18 @@ Although not required, adding:
 
 in the `tsconfig.json` file of **each app** can help with TypeScript path resolution during development.
 
+### Usage
+
+To use the UI components in your app, you can import them as follows:
+
+```tsx
+// React UI library components
+import { CounterButton } from "@repo/ui/counter-button";
+
+// shadcn/ui components
+import { Card } from "@repo/ui/components/card";
+```
+
 ### More Information
 
 #### [shadcn/ui](https://ui.shadcn.com/docs/monorepo) for UI components
