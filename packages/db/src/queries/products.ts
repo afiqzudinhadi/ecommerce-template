@@ -1,6 +1,10 @@
 import { db } from "../database";
-import { InsertProduct, product } from "../schema/products";
+import { InsertProduct, products } from "../schema/products";
 
 export async function createProduct(data: InsertProduct) {
-	await db.insert(product).values(data);
+	await db.insert(products).values(data);
+}
+
+export async function getProducts() {
+	return db.select().from(products);
 }

@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { db } from "../database";
-import { user } from "../schema/users";
+import { users } from "../schema/users";
 import type { SeedFunction } from "./seed";
 
 type UserRow = {
@@ -17,7 +17,7 @@ export const seedUsers: SeedFunction = async () => {
 		email: faker.internet.email(),
 	}));
 
-	await db.insert(user).values(data);
+	await db.insert(users).values(data);
 
 	return `${data.length} Users seeded successfully`;
 };

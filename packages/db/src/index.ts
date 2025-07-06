@@ -1,2 +1,2 @@
-export * from "./schema/users";
-export * from "./schema/products";
+export * from "./queries/users";
+export * from "./queries/products";

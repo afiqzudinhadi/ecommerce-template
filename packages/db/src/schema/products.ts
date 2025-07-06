@@ -1,7 +1,7 @@
 import { pgTable, serial, text, numeric, boolean } from "drizzle-orm/pg-core";
 import { timestamps } from "./column.helpers";
 
-export const product = pgTable("products", {
+export const products = pgTable("products", {
 	id: serial("id").primaryKey(),
 	name: text("name").notNull(),
 	description: text("description"),
@@ -11,5 +11,5 @@ export const product = pgTable("products", {
 	...timestamps,
 });
 
-export type InsertProduct = typeof product.$inferInsert;
-export type SelectProduct = typeof product.$inferSelect;
+export type InsertProduct = typeof products.$inferInsert;
+export type SelectProduct = typeof products.$inferSelect;

@@ -1,7 +1,7 @@
 import { pgTable, text } from "drizzle-orm/pg-core";
 import { timestamps } from "./column.helpers";
 
-export const user = pgTable("users", {
+export const users = pgTable("users", {
 	id: text("id").primaryKey(), // Clerk user ID
 	email: text("email").notNull(),
 	name: text("name"),
@@ -9,5 +9,5 @@ export const user = pgTable("users", {
 	...timestamps,
 });
 
-export type InsertUser = typeof user.$inferInsert;
-export type SelectUser = typeof user.$inferSelect;
+export type InsertUser = typeof users.$inferInsert;
+export type SelectUser = typeof users.$inferSelect;

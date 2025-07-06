@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { db } from "../database";
-import { product } from "../schema/products";
+import { products } from "../schema/products";
 import type { SeedFunction } from "./seed";
 
 type ProductRow = {
@@ -23,7 +23,7 @@ export const seedProducts: SeedFunction = async () => {
 		isPublished: faker.datatype.boolean(),
 	}));
 
-	await db.insert(product).values(data);
+	await db.insert(products).values(data);
 
 	return `${data.length} Products seeded successfully`;
 };
