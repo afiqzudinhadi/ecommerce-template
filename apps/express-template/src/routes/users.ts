@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getUsers, createUser } from "@repo/db/index.ts";
+import { getUsers, createUser } from "@repo/db/index";
 import { randomUUID } from "crypto";
 
 const router = Router();

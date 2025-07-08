@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createProduct, getProducts } from "@repo/db/index.ts";
+import { createProduct, getProducts } from "@repo/db/index";
 
 const router = Router();
 
