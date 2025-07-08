@@ -7,7 +7,8 @@
 		"skipLibCheck": true,
 		"paths": {
 			"~/*": ["./app/*"],
-			"@repo/ui/*": ["../../packages/ui/src/*"]
+			"@repo/ui/*": ["../../packages/ui/src/*"],
+			"@repo/db/*": ["../../packages/db/src/*"]
 		},
 
 		// Vite takes care of building everything, not tsc.
