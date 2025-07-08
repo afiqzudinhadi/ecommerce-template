@@ -6,7 +6,7 @@ dotenv.config({ path: ".env" });
 let db_url = process.env.DATABASE_URL!;
 try {
 	db_url = decodeURI(db_url);
-} catch (e) {
+} catch {
 	console.warn("Failed to decode DATABASE_URL, using as is.");
 }
 

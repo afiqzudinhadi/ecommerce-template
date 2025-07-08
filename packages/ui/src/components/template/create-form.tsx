@@ -35,7 +35,7 @@ export interface FormField {
 
 // Generic form data interface
 export interface FormData {
-	[key: string]: any;
+	[key: string]: string | number | boolean;
 }
 
 interface CreateFormProps {
@@ -78,7 +78,10 @@ export function CreateForm({
 	const [errors, setErrors] = useState<Record<string, string>>({});
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
-	const validateField = (field: FormField, value: any): string | null => {
+	const validateField = (
+		field: FormField,
+		value: string | number | boolean
+	): string | null => {
 		if (
 			field.required &&
 			(!value || (typeof value === "string" && !value.trim()))
@@ -129,7 +132,10 @@ export function CreateForm({
 		return Object.keys(newErrors).length === 0;
 	};
 
-	const handleInputChange = (key: string, value: any) => {
+	const handleInputChange = (
+		key: string,
+		value: string | number | boolean
+	) => {
 		setFormData((prev) => ({ ...prev, [key]: value }));
 
 		// Clear error when user starts typing
@@ -161,8 +167,13 @@ export function CreateForm({
 			});
 			setFormData(resetData);
 			setErrors({});
-		} catch (error: any) {
-			setErrors({ submit: error.message || "An error occurred" });
+		} catch (error: unknown) {
+			setErrors({
+				submit:
+					error instanceof Error
+						? error.message
+						: "An error occurred",
+			});
 		} finally {
 			setIsSubmitting(false);
 		}

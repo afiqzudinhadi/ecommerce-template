@@ -51,8 +51,8 @@ const ProductIndex: React.FC = () => {
 			const result = await fetchProducts(page);
 			setPaginatedProducts(result);
 			setError(null);
-		} catch (err: any) {
-			setError(err.message);
+		} catch (err: unknown) {
+			setError(err instanceof Error ? err.message : "An error occurred");
 		} finally {
 			setLoading(false);
 		}
@@ -90,9 +90,11 @@ const ProductIndex: React.FC = () => {
 
 			// Refresh current page
 			loadProducts(paginatedProducts.pagination.page);
-		} catch (err: any) {
-			console.error("Delete error:", err.message);
-			alert("Failed to delete product: " + err.message);
+		} catch (err: unknown) {
+			const errorMessage =
+				err instanceof Error ? err.message : "An error occurred";
+			console.error("Delete error:", errorMessage);
+			alert("Failed to delete product: " + errorMessage);
 		}
 	};
 

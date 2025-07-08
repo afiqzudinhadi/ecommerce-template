@@ -9,11 +9,11 @@ router.get("/", async (req, res) => {
 	try {
 		const users = await getUsers();
 		res.json(users);
-	} catch (error: any) {
+	} catch (error: unknown) {
 		console.error("Error fetching users:", error);
 		res.status(500).json({
 			error: "Failed to fetch users",
-			message: error.message,
+			message: error instanceof Error ? error.message : "Unknown error",
 		});
 	}
 });
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 // POST /api/users - Create new user
 router.post("/", async (req, res) => {
 	try {
-		const { name, email, password, role, isActive } = req.body;
+		const { name, email, password, role } = req.body;
 
 		// Validation
 		if (!name || !email || !password) {
@@ -60,17 +60,21 @@ router.post("/", async (req, res) => {
 		const newUser = await createUser(userData);
 
 		res.status(201).json(newUser);
-	} catch (error: any) {
+	} catch (error: unknown) {
 		console.error("Error creating user:", error);
 
 		// Handle unique constraint violation (duplicate email)
-		if (error.message?.includes("duplicate") || error.code === "23505") {
+		if (
+			error instanceof Error &&
+			(error.message?.includes("duplicate") ||
+				(error as any).code === "23505")
+		) {
 			return res.status(409).json({ error: "Email already exists" });
 		}
 
 		res.status(500).json({
 			error: "Failed to create user",
-			message: error.message,
+			message: error instanceof Error ? error.message : "Unknown error",
 		});
 	}
 });

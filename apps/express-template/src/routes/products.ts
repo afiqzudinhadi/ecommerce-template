@@ -18,9 +18,11 @@ router.get("/", async (req, res) => {
 
 		const result = await getProducts(page, limit);
 		res.status(200).json(result);
-	} catch (e: any) {
+	} catch (e: unknown) {
 		console.log("Error fetching products:", e);
-		res.status(500).json({ error: e.message });
+		res.status(500).json({
+			error: e instanceof Error ? e.message : "Unknown error",
+		});
 	}
 });
 
@@ -30,9 +32,11 @@ router.post("/", async (req, res) => {
 		const { name, price, description } = req.body;
 		await createProduct({ name, price, description });
 		res.status(201).json({ ok: true });
-	} catch (e: any) {
+	} catch (e: unknown) {
 		console.error("Error creating product:", e);
-		res.status(500).json({ error: e.message });
+		res.status(500).json({
+			error: e instanceof Error ? e.message : "Unknown error",
+		});
 	}
 });
 
