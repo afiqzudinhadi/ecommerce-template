@@ -1,4 +1,3 @@
-import React from "react";
 import { CreateForm, FormField, FormData } from "../template/create-form";
 
 // Product-specific form fields configuration based on database schema
