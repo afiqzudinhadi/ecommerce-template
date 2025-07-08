@@ -55,9 +55,9 @@ const productFields: FormField[] = [
 export interface ProductCreateData extends FormData {
 	name: string;
 	price: number;
-	description?: string | null;
-	imageUrl?: string | null;
-	isPublished?: boolean | null;
+	description: string;
+	imageUrl: string;
+	isPublished: boolean;
 }
 
 interface ProductCreateProps {
@@ -80,8 +80,8 @@ export function ProductCreate({
 		const productData: ProductCreateData = {
 			name: data.name as string,
 			price: Number(data.price),
-			description: (data.description as string) || null,
-			imageUrl: (data.imageUrl as string) || null,
+			description: data.description as string,
+			imageUrl: data.imageUrl as string,
 			isPublished: data.isPublished ? Boolean(data.isPublished) : false,
 		};
 

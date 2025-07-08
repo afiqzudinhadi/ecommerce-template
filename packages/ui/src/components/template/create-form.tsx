@@ -196,7 +196,7 @@ export function CreateForm({
 				return (
 					<textarea
 						className={baseInputClasses}
-						value={formData[field.key] || ""}
+						value={String(formData[field.key] || "")}
 						onChange={(e) =>
 							handleInputChange(field.key, e.target.value)
 						}
@@ -210,7 +210,7 @@ export function CreateForm({
 				return (
 					<select
 						className={baseInputClasses}
-						value={formData[field.key] || ""}
+						value={String(formData[field.key] || "")}
 						onChange={(e) =>
 							handleInputChange(field.key, e.target.value)
 						}
@@ -233,7 +233,7 @@ export function CreateForm({
 						<input
 							type="checkbox"
 							className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-							checked={formData[field.key] || false}
+							checked={Boolean(formData[field.key])}
 							onChange={(e) =>
 								handleInputChange(field.key, e.target.checked)
 							}
@@ -250,7 +250,11 @@ export function CreateForm({
 					<input
 						type="number"
 						className={baseInputClasses}
-						value={formData[field.key] || ""}
+						value={
+							typeof formData[field.key] === "number"
+								? String(formData[field.key])
+								: ""
+						}
 						onChange={(e) =>
 							handleInputChange(
 								field.key,
@@ -270,7 +274,7 @@ export function CreateForm({
 					<input
 						type={field.type}
 						className={baseInputClasses}
-						value={formData[field.key] || ""}
+						value={String(formData[field.key] || "")}
 						onChange={(e) =>
 							handleInputChange(field.key, e.target.value)
 						}
