@@ -74,13 +74,10 @@ export async function loader({
 }
 
 export default function ProductPage() {
-	const { products: initialProducts, error: initialError } =
-		useLoaderData<LoaderData>();
+	const { products, error } = useLoaderData<LoaderData>();
 	const revalidator = useRevalidator();
 
-	const [products, setProducts] = useState(initialProducts);
 	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState<string | null>(initialError);
 	const [showCreateForm, setShowCreateForm] = useState(false);
 
 	const handlePageChange = (page: number) => {
