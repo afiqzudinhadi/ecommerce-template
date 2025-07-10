@@ -1,9 +1,12 @@
 {
-  "extends": "@repo/typescript-config/base.json",
-  "compilerOptions": {
-    "lib": ["ES2015"],
-    "outDir": "./dist"
-  },
-  "exclude": ["node_modules"],
-  "include": ["."]
+	"extends": "@repo/typescript-config/base.json",
+	"compilerOptions": {
+		"lib": ["ES2015"],
+		"outDir": "./dist",
+		"paths": {
+			"@repo/db/*": ["../../packages/db/src/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"include": ["."]
 }

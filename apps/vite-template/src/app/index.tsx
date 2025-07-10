@@ -2,6 +2,8 @@ import "@repo/ui/styles/styles.css";
 import "@repo/ui/styles/global.css";
 import { CounterButton } from "@repo/ui/counter-button";
 import { Link } from "@repo/ui/link";
+import ProductForm from "./ProductForm";
+import ProductIndex from "./ProductIndex";
 
 import { Button } from "@repo/ui/components/button";
 import {
@@ -69,6 +71,9 @@ function App() {
 						Vite
 					</Link>
 				</p>
+
+				<ProductForm />
+				<ProductIndex />
 			</div>
 		</div>
 	);

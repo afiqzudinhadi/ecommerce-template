@@ -1,6 +1,7 @@
 {
 	"$schema": "https://turborepo.com/schema.json",
 	"ui": "tui",
+	"globalEnv": ["DATABASE_URL"],
 	"tasks": {
 		"build": {
 			"inputs": ["$TURBO_DEFAULT$", ".env*"],
@@ -29,6 +30,52 @@
 			"persistent": true
 		},
 		"clean": {
+			"cache": false
+		},
+		"db:check": {
+			"cache": false
+		},
+		"db:generate": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:migrate": {
+			"cache": false
+		},
+		"db:push": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:pull": {
+			"cache": false
+		},
+		"db:init": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:login": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:link": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:start": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:stop": {
+			"cache": false
+		},
+		"db:reset": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:reset-local": {
+			"cache": false
+		},
+		"db:seed": {
 			"cache": false
 		}
 	}
