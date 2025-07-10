@@ -1,5 +1,5 @@
-import { db } from "../database";
-import { InsertUser, users } from "../schema/users";
+import { db } from "../database.ts";
+import { type InsertUser, users } from "../schema/users.ts";
 import { eq } from "drizzle-orm";
 
 export async function createUser(data: InsertUser) {

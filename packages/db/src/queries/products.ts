@@ -1,6 +1,6 @@
+import { db } from "../database.ts";
+import { type InsertProduct, products } from "../schema/products.ts";
 import { count, desc } from "drizzle-orm";
-import { db } from "../database";
-import { InsertProduct, products } from "../schema/products";
 
 export async function createProduct(data: InsertProduct) {
 	await db.insert(products).values(data);

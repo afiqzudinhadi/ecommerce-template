@@ -14,7 +14,11 @@ try {
 	console.warn("Failed to decode DATABASE_URL, using as is.");
 }
 
-console.log("Connecting to database URL:", db_url);
+const maskedUrl = db_url.replace(
+	/(postgresql:\/\/[^:]+:)[^@]+(@[^\/]+)/,
+	'$1***$2'
+);
+console.log("Connecting to database URL:", maskedUrl);
 
 const client = postgres(db_url!);
 

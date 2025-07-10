@@ -1,5 +1,5 @@
 import { pgTable, text } from "drizzle-orm/pg-core";
-import { timestamps } from "./column.helpers";
+import { timestamps } from "./column.helpers.ts";
 
 export const users = pgTable("users", {
 	id: text("id").primaryKey(), // Clerk user ID
