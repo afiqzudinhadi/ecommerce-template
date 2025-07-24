@@ -35,3 +35,24 @@ This Turborepo has some additional tools already setup for you:
 - [Prettier](https://prettier.io) for code formatting
 - [shadcn/ui](https://ui.shadcn.com/docs/monorepo) for UI components
 - [Tailwind CSS v4](https://tailwindcss.com/) for styling and to use shadcn/ui
+
+### Setting up the monorepo
+
+To get started with this monorepo
+
+1. clone the repository:
+
+```bash
+git clone git@github.com:afiqzudinhadi/ecommerce-template.git
+```
+
+2. Add or remove `apps` and `packages` as needed. You can use the existing apps and packages as a reference for creating new ones.
+    - For example, to create a new app, you can copy the `next-template` directory and rename it to your desired app name. `admin-panel`, `public-site`, `landing-page`, `server` etc.
+    - Ensure that the new app's `package.json` has the correct name and version.
+    - Update the root `package.json` name to match your monorepo's name.
+
+3. Navigate to the root directory of the monorepo and install dependencies:
+
+```bash
+npm install
+```
