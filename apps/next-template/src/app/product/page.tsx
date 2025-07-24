@@ -1,6 +1,6 @@
 import React from "react";
 import { getProducts } from "@repo/db/index";
-import PageClient from "./page-client";
+import PageClient from "./page.client";
 import { Product } from "@repo/ui/components/products";
 import { PaginatedResponse } from "@repo/ui/components/template/table-show";
 
